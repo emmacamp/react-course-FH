@@ -1,16 +1,17 @@
 import Proptypes from 'prop-types'
 
-const newMessage = { name: 'Pepe', age: 10 }
+// const newMessage = { name: 'Pepe', age: 10 }
 
-export const FirstApp = ({ title, subTitle }) => {
+export const FirstApp = ({ title, subTitle, name }) => {
     return (
         <>
-            <h1>{title}</h1>
+            <h1 data-testid="test-title">{title}</h1>
             <h2>{subTitle}</h2>
+            <h2>{subTitle}</h2>
+            <p>{name}</p>
         </>
     )
 }
-
 
 
 FirstApp.propTypes = {
@@ -19,6 +20,7 @@ FirstApp.propTypes = {
 }
 
 FirstApp.defaultProps = {
-    title: 'Default title',
-    subTitle: 0
+    // title: 'Default title',
+    subTitle: 'Im subtitle',
+    name: 'user'
 }

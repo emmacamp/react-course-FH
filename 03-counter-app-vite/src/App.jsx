@@ -6,8 +6,8 @@ export const App = () => {
 
     return (
         <>
-            {/* <FirstApp /> */}
-            <CounterApp />
+            {/* <FirstApp title='Hola Pepe' /> */}
+            <CounterApp value={100} />
         </>
     )
 }
