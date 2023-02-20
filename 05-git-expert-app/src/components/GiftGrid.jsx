@@ -12,16 +12,16 @@ export const GiftGrid = ({ category }) => {
         <>
             <h3>{category}</h3>
             {
-                isLoading
-                    ? 'Cargando...'
-                    : <ul className='card-grid'>
-                        {
-                            images.map((img) => (
-                                <GifItem key={img.id} {...img} />
-                            ))
-                        }
-                    </ul>
+                isLoading && (<h2>Cargando...</h2>)
             }
+            <ul className='card-grid'>
+                {
+                    images.map((img) => (
+                        <GifItem key={img.id} {...img} />
+                    ))
+                }
+            </ul>
+
         </>
     )
 }
