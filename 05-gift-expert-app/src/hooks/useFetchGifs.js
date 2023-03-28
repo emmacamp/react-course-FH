@@ -6,12 +6,9 @@ export const useFetchGifs = (category) => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getImages = async () => {
-        const img = await getGifts(category)
-        setInterval(() => {
-            setImages(img)
-            setIsLoading(false)
-
-        }, 2000)
+        const img = await getGifts(category);
+        setImages(img)
+        setIsLoading(false)
     }
 
     useEffect(() => {
