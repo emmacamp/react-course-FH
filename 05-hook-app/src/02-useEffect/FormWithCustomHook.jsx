@@ -12,7 +12,7 @@ export const FormWithCustomHook = () => {
         password: ''
     });
 
-
+    console.log(formState);
 
     return (
         <>
