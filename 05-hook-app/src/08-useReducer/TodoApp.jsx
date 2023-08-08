@@ -1,18 +1,15 @@
-import { useReducer } from 'react'
-import { todoActions, todoReducer } from './todoReducer'
+import { useTodo } from '../hooks/useTodo'
 import { TodoList } from './TodoList'
 import { TodoAdd } from './TodoAdd'
-import { useEffect } from 'react'
-import { useTodo } from '../hooks/useTodo'
 
 
 export const TodoApp = () => {
-    const { todos, handleDelete, handleNewTodo, handleToggleTodo } = useTodo();
+    const { todos, todoCount, todoPendingCount, handleDelete, handleNewTodo, handleToggleTodo } = useTodo();
 
     return (
         <div>
             <h1>TodoApp</h1>
-            <p>TODOS: {todos?.length} Pending: {todos.filter(todo => !todo.done).length}</p>
+            <p>TODOS: {todoCount} Pending: {todoPendingCount}</p>
             <div className="row">
                 <div className="col-7">
                     <TodoList todos={todos} onDeleteTodo={handleDelete} onToggleTodo={handleToggleTodo} />
