@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { HeroesApp } from './HeroesApp.jsx'
 import { BrowserRouter } from 'react-router-dom'
-// import { HooksApp } from './HooksApp'
-import { MainApp } from './09-useContext/MainApp'
-import './index.css'
+import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <BrowserRouter>
-    <MainApp />
-  </BrowserRouter>
+    <BrowserRouter>
+      <HeroesApp />
+    </BrowserRouter>
   </React.StrictMode>,
 )
