@@ -1,12 +1,15 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../auth/context/AuthProvider';
 
 
 export const Navbar = () => {
+
+    const { user, logout } = useAuth();
     const navigate = useNavigate();
 
     const onLogout = () => {
-        console.log('Logout');
         navigate('/login', { replace: true });
+        logout();
     }
 
     return (
@@ -44,13 +47,13 @@ export const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <div className="navbar-collapse  w-100 order-3 dual-collapse2">
                     <ul className="navbar-nav ms-auto">
                         <span
                             className="nav-item nav-link text-primary"
                             to="/"
                         >
-                            Emmanuel
+                            {user?.name}
                         </span>
                         <button
                             onClick={onLogout}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+    /* width: 500px;
+    height: 500px; */
+    border-radius: 10%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    /* cursor: pointer; */
+    /* z-index: 9000; */
+}
+

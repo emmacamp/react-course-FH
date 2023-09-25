@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
 
+  const { login } = useAuth();
+
   const onLogin = () => {
-    console.log('onLogin');
+    login('Popa');
     navigate('/marvel', { replace: true });
-    
   }
 
   return (

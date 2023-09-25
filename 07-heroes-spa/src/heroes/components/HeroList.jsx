@@ -1,4 +1,3 @@
-import React from 'react'
 import { getHeroesByPublisher } from '../helpers';
 import { HeroCard } from './HeroCard';
 

@@ -14,7 +14,7 @@ export const HeroCard = ({
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <img
-                            src={`./assets/heroes/${id}.jpg`}
+                            src={`/heroes/${id}.jpg`}
                             className="card-img"
                             alt={superhero}
 
@@ -29,10 +29,10 @@ export const HeroCard = ({
                                 && <p className="card-text">{characters}</p>
                             }
                             <small className="text-end">{publisher}</small>
-                            <p className="card-text">
+                            <p className="card-text mb-3">
                                 <small className="text-muted">{first_appearance}</small>
                             </p>
-                            <Link to={`/hero/${id}`}>
+                            <Link className="bg-blue-700 px-5 text-white p-2 rounded-full hover:bg-blue-800" to={`/hero/${id}`}>
                                 More info...
                             </Link>
                         </div>

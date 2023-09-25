@@ -1,37 +1,50 @@
 import { useParams } from "react-router-dom";
-import { getHeroesByPublisher } from "../helpers";
+import { getHeroById, getHeroesByPublisher } from "../helpers";
+import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeroPage = () => {
   const { id, ...rest} = useParams();
 
-  const publisher = rest['*'].includes('marvel') ? 'Marvel Comics' : 'DC Comics';
-  const heroes = getHeroesByPublisher(publisher);
+  console.log(rest);
+  
+  // const publisher = rest['*'].includes('marvel') ? 'Marvel Comics' : 'DC Comics';
+  const returns = rest['*'].includes('marvel') ? '/marvel' : '/dc';
+  // const heroes = getHeroesByPublisher(publisher);
+  
+  const hero = getHeroById(id);
+  
+  
+  if (!hero) {
+    return <Navigate to='/marvel' />
+  }
 
-  const hero = heroes.find(hero => hero.id === id);
 
+  const goBack = () => {
+    window.history.length <= 2 ? window.location.href = returns : window.history.back();
+  }
 
 
   return (
-    <div>
+    <div className="animate__animated  animate__backInLeft">
       <h1>Hero Page</h1>
-      <div className="hero">
+      <div className="hero justify-center flex">
         <div className="hero__container">
-          <div className="hero__container__image">
-            <img src={`/assets/heroes/${id}.jpg`} alt="hero" />
+          <div className="w-72">
+            <img src={`/heroes/${id}.jpg`} alt="hero" />
           </div>
-          <div className="hero__container__info">
+          <div className="border-3 p-3 w-fit ">
             {
               hero && (
                 <>
-                  <h2>{hero.superhero}</h2>
-                  <p>{hero.alter_ego}</p>
-                  <p>{hero.first_appearance}</p>
-                  <p>{hero.characters}</p>
+                  <h2><span className="fw-bold">Superhero: </span>{hero.superhero}</h2>
+                  <p><span className="fw-bold">Alter ego: </span>{hero.alter_ego}</p>
+                  <p><span className="fw-bold">First Appearance: </span>{hero.first_appearance}</p>
+                  <p><span className="fw-bold">Characters: </span>{hero.characters}</p>
                 </>
-              )
-            }
-
+              )}
           </div>
+          <button onClick={goBack} className="btn btn-primary m-2">Go Back</button>
         </div>
       </div>
     </div>
