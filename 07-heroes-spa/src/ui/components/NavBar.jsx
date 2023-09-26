@@ -4,12 +4,12 @@ import { useAuth } from '../../auth/context/AuthProvider';
 
 export const Navbar = () => {
 
-    const { user, logout } = useAuth();
+    const {user, logout} = useAuth();
     const navigate = useNavigate();
 
     const onLogout = () => {
-        navigate('/login', { replace: true });
         logout();
+        navigate('/login', { replace: true });
     }
 
     return (

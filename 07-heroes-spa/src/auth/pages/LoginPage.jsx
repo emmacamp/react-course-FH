@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+  import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
 
 export const LoginPage = () => {
@@ -7,8 +7,11 @@ export const LoginPage = () => {
   const { login } = useAuth();
 
   const onLogin = () => {
-    login('Popa');
-    navigate('/marvel', { replace: true });
+    login('Emmanuel Popa');
+
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
+    navigate(lastPath, { replace: true });
   }
 
   return (

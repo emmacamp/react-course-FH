@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
+import { useState } from "react";
 import { useMemo } from "react";
 
 const withSearch = (Component) => ({ list, ...rest }) => {

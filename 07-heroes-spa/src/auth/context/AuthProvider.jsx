@@ -3,21 +3,12 @@ import { AuthContext } from "./AuthContext"
 import { authReducer } from "./authReducer"
 import { useContext } from "react"
 import { types } from "../types/types"
-import { useNavigate } from "react-router-dom"
-
 
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
-
-    const navigate = useNavigate();
-
     const init = () => {
         const user = JSON.parse(localStorage.getItem('user'))
-
-        return {
-            logged: !!user,
-            user: user
-        }
+        return { logged: !!user, user: user }
     }
 
     const [state, dispath] = useReducer(authReducer, {}, init)
