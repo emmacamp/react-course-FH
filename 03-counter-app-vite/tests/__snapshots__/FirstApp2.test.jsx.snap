@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pruebas en <FirstApp2 /> Debe de hacer match con el snapshot 1`] = `
+<div>
+  <h1
+    data-testid="test-title"
+  >
+    Hola Pepe
+  </h1>
+  <h2>
+    Im subtitle
+  </h2>
+  <h2>
+    Im subtitle
+  </h2>
+  <p>
+    user
+  </p>
+</div>
+`;
+
 exports[`Pruebas en <FirstApp2 /> Debe hacer match del screenshot 1`] = `
 <div>
   <h1
